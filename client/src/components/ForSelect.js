@@ -1,0 +1,5 @@
+export const Admin="Admin"
+export const Team_lead="Team lead"
+export const Junior_Software_Engineer="Junior Software Engineer"
+export const Software_Engineer="Software Engineer"
+export const Senior_Software_Engineer="Senior Software Engineer"
