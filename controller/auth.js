@@ -68,7 +68,15 @@ const Member=async(req,res)=>{
 }
 
 const fetchdata=(req,res)=>{
-  res.send('updater')
+  AddProject.find((err,data)=>{
+    if(err){
+      res.status(StatusCodes.INTERNAL_SERVER_ERROR)
+      console.log(err)
+    }
+    else{
+      res.status(StatusCodes.OK).send(data)
+    }
+  })
 }
 
 const userfetch=(req,res)=>{

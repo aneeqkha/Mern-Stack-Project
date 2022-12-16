@@ -7,45 +7,28 @@ import StylingUser from '../../styling/user.js'
 
 const User=()=>{
 
-var tested;
-var a=0;
-const n=a++;
-const[Usertable,setState]=useState({})
+const[Usertable,setUser]=useState('')
+const id='/api/v1/auth/fetchuser'
+var n=0
+
+const add=()=>{
+   n++
+   return n
+}
+
 useEffect(()=>{
    
    const fetchuser=async()=>{
-    const data= await axios.get('/api/v1/auth/fetchuser')
-    console.log("product>>>>",data)
-    tested=data;
-    setState(data);
-    console.log(Usertable)
+    const data= await( axios.get(id) )
+    console.log("User>>>>",data)
+    setUser(data)
    }
-   fetchuser()
-},[User()]);
+   fetchuser() 
+},[id]);
 
-const Call=()=>{
-   console.log("start calling")
-   
-   { tested && tested?.data.map((value)=>{
-    return <tr>
-      <td>{n}</td>
-      <td>{value.First_name}</td>
-      {console.log(value.First_name)}
-      <td>{value.Last_name}</td>
-      {console.log(value.Last_name)}
-      <td>{value.email}</td>
-      {console.log(value.email)}
-      <td>{value.designation}</td>
-      {console.log(value.designation)}
-      </tr> 
-     })
-}
-
-console.log("end")
-}
-
-   return <StylingUser>
-      <h1>USER</h1>
+return <StylingUser>
+<div className='mainuser'>      
+<h1>USER</h1>
 
 <table >
    <thead>
@@ -58,20 +41,18 @@ console.log("end")
   </tr>
   </thead>
   <tbody>
-   
-   <Call/>
-
-
-{/* <tr>
-<td>{n}</td>
+  {Usertable && Usertable?.data.map((value)=>(
+<tr>
+<td>{add()}</td>
 <td>{value.First_name}</td>
 <td>{value.Last_name}</td>
 <td>{value.email}</td>
 <td>{value.designation}</td>
-</tr> */}
+</tr>
+  ))} 
 </tbody>
 </table>
-  
+</div> 
    </StylingUser>
 }
 

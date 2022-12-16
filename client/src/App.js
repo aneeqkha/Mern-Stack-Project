@@ -1,5 +1,5 @@
-import { Login,Error,AddProject,DashBoard,Protected } from './Pages';
-import { Home,User,Mainlayout } from './Pages/Dashboard/index.js';
+import { Login,Error,AddProject,Protected } from './Pages';
+import { Home,User,Mainlayout,Task,Role } from './Pages/Dashboard/index.js';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 
 
@@ -15,6 +15,9 @@ function App() {
         } >
         <Route path='Home' element={<Home/>}>
              <Route path='add' element={<AddProject/>}/>
+             <Route path='task' element={<Task/>}>
+                <Route path='role' element={<Role/>}/>
+             </Route>
         </Route> 
         <Route path='User' element={<User/>}/>
         

@@ -79,9 +79,11 @@ const AddProject=async({AddMembers})=>{
    try {
     await axios.post('/api/v1/auth/members',AddMembers)
     dispatch({type:PROJECT_Scucces})
+    Clear()
    } catch (error) {
     console.log(error)
      dispatch({type:PROJECT_Errors})
+     Clear()
    }
 
 }

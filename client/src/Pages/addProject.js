@@ -35,7 +35,7 @@ const add=()=>{
 const addmembers=()=>{
     var team=document.getElementById("Members").value;
     const arr=team.split("\n");
-    if(arr.length==4){
+    if(arr.length===4){
     setProjvalue({...addProjectValue,Members: arr})
   
 }

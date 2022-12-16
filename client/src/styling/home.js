@@ -13,6 +13,11 @@ const Styling_home=styled.section`
     padding-top: 1%;
 }
 
+.main{
+    background-color: lightgreen;
+    height: 500px;
+}
+
 .btn_add{
     background-color: lightgreen;
     float: left;
@@ -25,6 +30,28 @@ h1{
     color: white;
 }
 
+
+table{
+    width: 95%;
+    border-collapse: collapse;
+    text-align: left;
+    margin-top: 4%;
+    background-color: white;
+    margin-left: 2%;
+}
+
+th{
+    background-color: gray;
+}
+
+td,th{
+    height: 40px;
+    border-top: 1px solid gray;
+}
+
+.table_img{
+height: 30px;
+}
 
 `
 
